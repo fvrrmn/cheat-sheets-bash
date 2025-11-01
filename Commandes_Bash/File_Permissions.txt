@@ -1,0 +1,48 @@
+Permissions des fichiers :
+Les permissions sont représentées par une série de caractères indiquant les droits pour le propriétaire, le groupe et les autres :
+
+  r : lecture (read)
+  w : écriture (write)
+  x : exécution (execute)
+
+Exemple : rwxr-xr--
+  Propriétaire : lecture, écriture, exécution
+  Groupe       : lecture, exécution
+  Autres       : lecture seulement
+
+Représentation numérique :
+Les permissions peuvent aussi être représentées par des nombres :
+
+  0 : aucun droit
+  1 : exécution
+  2 : écriture
+  3 : écriture + exécution
+  4 : lecture
+  5 : lecture + exécution
+  6 : lecture + écriture
+  7 : lecture + écriture + exécution
+
+Exemple : 755 → propriétaire : rwx, groupe : r-x, autres : r-x
+
+---
+
+chmod    : Change les permissions d’un fichier ou dossier
+         Options :
+           -R : récursif pour dossiers et sous-dossiers
+           -v : affiche un diagnostic pour chaque fichier
+         Exemple : chmod 755 script.sh
+         Exemple : chmod -Rv /home/user/dossier
+
+chown    : Change le propriétaire d’un fichier ou dossier
+         Options :
+           -R : récursif pour dossiers et sous-dossiers
+           -v : affiche un diagnostic pour chaque fichier
+         Exemple : chown user fichier.txt
+         Exemple : chown -Rv user /home/user/dossier
+
+chgrp    : Change le groupe d’un fichier ou dossier
+         Options :
+           -R : récursif pour dossiers et sous-dossiers
+           -v : affiche un diagnostic pour chaque fichier
+         Exemple : chgrp group fichier.txt
+         Exemple : chgrp -Rv staff /home/user/dossier

@@ -1,0 +1,88 @@
+ls      : Liste les fichiers et dossiers
+         Options :
+           -l : liste détaillée (permissions, propriétaire, taille, date)
+           -a : inclut les fichiers cachés
+           -h : affiche les tailles lisibles (Ko, Mo, Go)
+           -t : trie par date de modification
+           -r : inverse l'ordre de tri
+           -R : liste récursivement les sous-dossiers
+           -S : trie par taille de fichier
+           -1 : liste un fichier par ligne
+           -d : liste les dossiers eux-mêmes, pas leur contenu
+           -F : ajoute un indicateur (*/=@|) aux entrées
+         Exemple : ls -lha /home/user
+
+cd      : Change de répertoire
+         Options / usages :
+           cd .. : remonte d’un niveau
+           cd ~  : va dans le répertoire home
+           cd -  : retourne au répertoire précédent
+           cd /  : va à la racine
+         Exemple : cd /var/log
+
+pwd     : Affiche le chemin absolu du répertoire courant
+         Options :
+           -L : affiche le répertoire courant logique
+           -P : affiche le répertoire physique (sans liens symboliques)
+         Exemple : pwd -P
+
+echo    : Affiche un texte ou la valeur d’une variable
+         Options :
+           -n : ne pas ajouter de nouvelle ligne à la fin
+           -e : interprète les caractères spéciaux (\n, \t…)
+           -E : ne pas interpréter les caractères spéciaux (par défaut)
+         Exemple : echo -e "Hello $USER\nBienvenue !"
+
+cat     : Affiche le contenu d’un fichier
+         Options :
+           -n : numéroter les lignes
+           -b : numéroter seulement les lignes contenant du texte
+           -s : supprimer les lignes vides supplémentaires
+           -v : afficher les caractères non-imprimables (sauf tab et fin de ligne)
+         Exemple : cat -n fichier.txt
+
+cp      : Copie des fichiers ou dossiers
+         Options :
+           -r : récursif (pour les dossiers)
+           -i : demande confirmation avant écrasement
+           -u : copie seulement si la source est plus récente
+           -v : mode verbeux (affiche les fichiers copiés)
+         Exemple : cp -rv dossier_source/ dossier_destination/
+
+mv      : Déplace ou renomme des fichiers/dossiers
+         Options :
+           -i : demande confirmation avant écrasement
+           -u : déplace seulement si la source est plus récente
+           -v : mode verbeux (affiche les fichiers déplacés)
+         Exemple : mv -v fichier.txt /home/user/Documents/
+
+rm      : Supprime des fichiers ou dossiers
+         Options :
+           -r : récursif
+           -i : confirmation
+           -f : force la suppression sans demander
+           -v : mode verbeux (affiche les fichiers supprimés)
+         Exemple : rm -rfv dossier_temp/
+
+touch   : Crée un fichier vide ou met à jour la date
+         Options :
+           -a : ne met à jour que la date d’accès
+           -m : ne met à jour que la date de modification
+           -t : définit un horodatage spécifique
+           -c : ne crée pas de fichier s’il n’existe pas
+         Exemple : touch -am fichier.txt
+
+mkdir   : Crée un dossier
+         Options :
+           -p : crée les parents si nécessaires
+           -v : affiche un message pour chaque dossier créé
+           -m : définit les permissions du dossier
+         Exemple : mkdir -pv /home/user/NouveauDossier
+
+man     : Affiche le manuel d’une commande
+         C’est une ressource précieuse pour comprendre l’usage, les options et les exemples.
+         Exemple : man ls
+
+alias   : Crée un alias pour une commande
+         Permet de créer des raccourcis pour des commandes longues ou fréquentes.
+         Exemple : alias ll='ls -la'

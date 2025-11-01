@@ -1,0 +1,30 @@
+zip     : Compresse des fichiers ou dossiers
+         Options :
+           -r : récursif pour les dossiers
+           -u : met à jour les fichiers dans l’archive s’ils sont plus récents
+           -d : supprime des fichiers de l’archive
+           -e : crypte le contenu de l’archive ZIP
+           -x : exclut certains fichiers de la compression
+         Exemple : zip -r archive.zip dossier/
+
+unzip   : Décompresse des fichiers
+         Options :
+           -l : liste le contenu de l’archive
+           -t : teste l’archive compressée
+           -d [répertoire] : extrait les fichiers dans un répertoire différent
+           -o : écrase les fichiers existants sans demander
+           -x [fichiers] : exclut certains fichiers de l’extraction
+         Exemple : unzip -l archive.zip
+         Exemple : unzip -d /home/user/extracted archive.zip
+
+tar     : Archive et compresse des fichiers/dossiers
+         Options :
+           -c : créer une nouvelle archive
+           -x : extraire les fichiers d’une archive
+           -t : lister le contenu de l’archive
+           -v : mode verbeux, affiche les fichiers traités
+           -z : filtre l’archive avec gzip
+           -j : filtre l’archive avec bzip2
+           -f [archive] : spécifie le nom de l’archive
+         Exemple : tar -cvzf archive.tar.gz dossier/
+         Exemple : tar -xvzf archive.tar.gz -C /home/user/extracted/

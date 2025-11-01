@@ -1,0 +1,57 @@
+ping    : Teste la connectivité réseau
+         Options :
+           -c [nombre] : nombre de paquets à envoyer
+           -i [secondes] : intervalle entre chaque paquet
+           -t [TTL] : définit le Time To Live
+           -q : sortie silencieuse, affiche seulement le résumé
+           -s [taille] : nombre d’octets de données à envoyer
+         Exemple : ping -c 4 -i 1 google.com
+
+curl    : Récupère le contenu d’une URL
+         Options :
+           -O : sauvegarde avec le nom d’origine
+           -L : suit les redirections
+           -I : récupère uniquement les headers HTTP
+           -d [données] : envoie des données via POST
+           -u [user:password] : authentification serveur
+         Exemple : curl -O https://example.com/fichier.txt
+
+wget    : Télécharge des fichiers depuis le web
+         Options :
+           -b : exécution en arrière-plan
+           -q : mode silencieux
+           -r : téléchargement récursif de dossiers
+           -c : reprend un téléchargement interrompu
+           --limit-rate=[vitesse] : limite le débit de téléchargement
+         Exemple : wget -c https://example.com/fichier.zip
+
+ssh     : Connexion distante sécurisée
+         Options :
+           -p [port] : port spécifique
+           -i [clé] : fichier de clé privée
+           -v : mode verbeux
+           -C : compression activée
+           -X : transfert X11 activé
+           -o [option] : spécifie des options directement en ligne de commande
+         Exemple : ssh -p 2222 -i ~/.ssh/id_rsa user@serveur.com
+
+scp     : Copie sécurisée de fichiers
+         Options :
+           -r : copie récursive des dossiers
+           -P [port] : port distant
+           -i [clé] : fichier de clé privée
+           -C : compression activée
+           -v : mode verbeux
+           -l [vitesse] : limite la bande passante utilisée
+         Exemple : scp -r -P 2222 dossier/ user@serveur.com:/home/user/
+
+rsync   : Synchronisation de fichiers et dossiers
+         Options :
+           -a : mode archive (préserve les permissions, liens, etc.)
+           -v : augmente la verbosité
+           -z : compresse les données pendant le transfert
+           --delete : supprime les fichiers extraits de la destination
+           -r : récursif dans les dossiers
+           -u : saute les fichiers plus récents sur le destinataire
+           --progress : affiche la progression du transfert
+         Exemple : rsync -avz --progress /local/dossier/ user@serveur.com:/remote/dossier/

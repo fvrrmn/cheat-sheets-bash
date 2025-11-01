@@ -1,0 +1,91 @@
+ps      : Affiche les processus
+         Colonnes principales :
+           PID  : identifiant unique du processus
+           TTY  : terminal associé au processus
+           TIME : temps total CPU utilisé par le processus
+           CMD  : commande ayant lancé le processus
+         Options :
+           aux : tous les processus avec infos détaillées
+           -e  : tous les processus
+           -f  : informations détaillées
+           -u  : processus d’un utilisateur spécifique
+           -a  : tous les processus avec terminal
+           -x  : processus sans terminal
+         Exemple : ps aux | grep apache
+
+top     : Affiche les processus en temps réel
+         Colonnes principales :
+           PID     : identifiant du processus
+           USER    : utilisateur propriétaire
+           PR      : priorité
+           NI      : valeur nice (influence l’ordonnancement)
+           VIRT    : mémoire virtuelle utilisée
+           RES     : mémoire physique utilisée
+           SHR     : mémoire partagée
+           S       : statut (S=sleep, R=running, etc.)
+           %CPU    : pourcentage d’utilisation CPU
+           %MEM    : pourcentage d’utilisation mémoire
+           TIME+   : temps total CPU depuis le démarrage
+           COMMAND : commande ayant lancé le processus
+         Options :
+           -d [secondes] : intervalle entre mises à jour
+           -p [PID]      : surveiller des PID spécifiques
+           -u [user]     : afficher les tâches d’un utilisateur spécifique
+           -n [nombre]   : nombre d’itérations
+           -b            : mode batch
+         Exemple : top -u root -d 2
+
+df      : Affiche l’espace disque des systèmes de fichiers
+         Colonnes principales :
+           Filesystem  : nom du système de fichiers
+           1K-blocks   : taille totale en blocs de 1K
+           Used        : espace utilisé
+           Available   : espace disponible
+           Use%        : pourcentage utilisé
+           Mounted on  : point de montage
+         Options :
+           -h : lisible par l’humain (Ko, Mo, Go)
+           -a : tous les systèmes de fichiers
+           -T : type de système de fichiers
+           -i : utilisation des inodes
+           -P : format POSIX
+         Exemple : df -hT
+
+du      : Affiche la taille des fichiers et dossiers
+         Colonnes principales :
+           Size : espace disque utilisé
+           Path : chemin du fichier ou dossier
+         Options :
+           -h             : lisible par l’humain
+           -s             : résumé par élément
+           -a             : inclut tous les fichiers
+           -c             : total général
+           --max-depth=N  : limite la profondeur d’affichage
+         Exemple : du -sh --max-depth=1 /home/user
+
+free    : Affiche l’état de la mémoire
+         Options :
+           -h : lisible par l’humain (Ko, Mo, Go)
+           -b : en octets
+           -k : en kilooctets
+           -m : en mégaoctets
+           -g : en gigaoctets
+           -s [interval] : mise à jour continue toutes les [interval] secondes
+           -t : affiche le total
+         Exemple : free -h
+
+kill    : Termine un processus par PID
+         Options :
+           -9          : force l’arrêt
+           -l          : liste des signaux disponibles
+           -s [signal] : envoyer un signal spécifique
+           -p          : affiche le PID
+         Exemple : kill -9 1234
+
+uptime  : Temps de fonctionnement et charge du système
+         Informations affichées :
+           Current Time    : heure actuelle
+           Uptime Duration : durée depuis le dernier démarrage
+           Number of Users : nombre d’utilisateurs connectés
+           Load Averages   : moyenne de charge sur 1, 5 et 15 minutes
+         Exemple : uptime

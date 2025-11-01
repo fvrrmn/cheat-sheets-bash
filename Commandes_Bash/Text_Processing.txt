@@ -1,0 +1,57 @@
+grep    : Recherche des motifs dans les fichiers
+         Options :
+           -i : insensible à la casse
+           -r : recherche récursive dans les dossiers
+           -v : affiche les lignes ne correspondant pas au motif
+           -n : affiche le numéro de ligne
+         Exemple : grep -irn "erreur" /var/log
+
+awk     : Traitement de texte et manipulation de colonnes
+         Options :
+           -F : définit le séparateur de champs
+           -v : définit une variable à utiliser dans le script
+           -f : utilise un fichier comme programme awk
+         Syntaxe courante : '{print $1}' : affiche la première colonne
+         Exemple : awk -F":" '{print $1}' /etc/passwd
+
+sed     : Éditeur de texte en ligne de commande
+         Options :
+           -i : modifie directement le fichier
+           -e : ajoute un script à exécuter
+           -n : n'affiche pas automatiquement les lignes
+           -r : utilise des expressions régulières étendues
+           -f : ajoute un script depuis un fichier
+           -l : définit la longueur de ligne pour la commande l
+         Syntaxe courante : 's/ancien/nouveau/' : remplace "ancien" par "nouveau"
+         Exemple : sed -i 's/DEBUG/INFO/' fichier.log
+
+cut     : Coupe des colonnes ou champs
+         Options :
+           -d : définit le délimiteur de champs
+           -f : sélectionne les champs à afficher
+           --complement : affiche tous les champs sauf ceux sélectionnés
+         Exemple : cut -d':' -f1 /etc/passwd
+
+sort    : Trie les lignes
+         Options :
+           -r : ordre inverse
+           -n : tri numérique
+           -k : tri par colonne spécifique
+           -u : supprime les doublons
+           -t : définit un délimiteur pour les champs
+         Exemple : sort -t':' -k3n /etc/passwd
+
+tail    : Affiche les dernières lignes d’un fichier
+         Options :
+           -n [nombre] : affiche les [nombre] dernières lignes
+           -f : suit le fichier en temps réel
+           -c [nombre] : affiche les [nombre] derniers octets
+           --pid=[pid] : termine après que le processus avec ce PID est terminé
+           --retry : réessaie d’ouvrir un fichier même s’il est inaccessible
+         Exemple : tail -n 20 -f /var/log/syslog
+
+head    : Affiche les premières lignes d’un fichier
+         Options :
+           -n [nombre] : affiche les [nombre] premières lignes
+           -c [nombre] : affiche les [nombre] premiers octets
+         Exemple : head -n 10 fichier.txt
